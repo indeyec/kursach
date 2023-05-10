@@ -14,6 +14,8 @@
 				<img src="" alt="логотип">
 			</div>
 			<p>NAME</p>
+			<div class="profile">Регистрация</div>
+			<div class="profile">Вход</div>
 			<div class="profile">профиль</div>
 		</div>
 
