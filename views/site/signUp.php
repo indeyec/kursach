@@ -14,7 +14,7 @@
          <input type="text"name="MiddleName" required placeholder="Отчество">
 			</div>
 			<div class="block">
-         <input type="text"name="Birthday" required placeholder="Дата рождения">
+         <input type="date"name="Birthday" required placeholder="Дата рождения">
 			</div>
 			
 
@@ -55,26 +55,15 @@ input{
    padding: 10px;
    width: 300px;
    border: 0;
-   color: pink;
+   color: #2e65ee;
    border-radius: 10px;
    font-size: 20px;
-}
-.blocks{
-	background-color: #D9B5B5;
-	width: 772px;
-	height: 739px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-   margin: 0;
-   border-radius: 30px;
-	/* justify-content: center; */
 }
 
 .block{
 	background-color: #D9D9D9;
-	width: 300px;
-	height: 60px;	
+	width: 352px;
+	height: 82px;
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -57,6 +57,20 @@ class Site
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
 
+    public function logout(): void
+    {
+        Auth::logout();
+        app()->route->redirect('/');
+    }
+
+    public function profile(Request $request): string
+
+    {
+        // $users = User::where('login', $request->login ?? 0)->get();
+        $users = user::all();
+        return new View('site.profile', ['users' => $users]);
+    }
+
 }
 
 

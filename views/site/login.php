@@ -5,16 +5,6 @@
 	justify-content: center;
 }
 
-.blocks{
-	background-color: #D9B5B5;
-	width: 772px;
-	height: 739px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-}
-
 .block{
 	background-color: #D9D9D9;
 	width: 533px;
@@ -41,7 +31,7 @@ input{
    padding: 10px;
    width: 400px;
    border: 0;
-   color: pink;
+   color: #2e65ee;
    border-radius: 10px;
    font-size: 20px;
 }

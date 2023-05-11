@@ -13,10 +13,20 @@
 			<div class="img_logo">
 				<img src="" alt="логотип">
 			</div>
-			<p>NAME</p>
+            <a href="<?= app()->route->getUrl('/')?>">NAME</a>
+            <?php
+            if (!app()->auth::check()):
+            ?>
 			<a href="<?= app()->route->getUrl('/signUp')?>">SIGN UP</a>
 			<a href="<?= app()->route->getUrl('/login')?>">LOGIN</a>
-			<div class="profile">профиль</div>
+            <?php
+            else:
+            ?>
+            <a href="<?= app()->route->getUrl('/profile')?>">PROFILE</a>
+            <a href="<?= app()->route->getUrl('/logout')?>">LOGOUT(<?= app()->auth::User()->login ?>)</a>
+            <?php
+            endif;
+            ?>
 		</div>
 
 		<div class="tape">
