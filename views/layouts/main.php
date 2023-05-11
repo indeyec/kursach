@@ -14,8 +14,8 @@
 				<img src="" alt="логотип">
 			</div>
 			<p>NAME</p>
-			<div class="profile">Регистрация</div>
-			<div class="profile">Вход</div>
+			<a href="<?= app()->route->getUrl('/signUp')?>">SIGN UP</a>
+			<a href="<?= app()->route->getUrl('/login')?>">LOGIN</a>
 			<div class="profile">профиль</div>
 		</div>
 
@@ -30,7 +30,11 @@
 	</div>
 
 	<main>
-		<div class="block"></div>
+		
+		
+		<?= $content ?? '' ?>
+		
+	
 </main>
 <style>
 		*{
@@ -87,13 +91,6 @@
 	text-decoration: none;
 }
 
-.block{
-	background-color: #000;
-	height: 700px;
-	width: 1500px;
-	margin: 0 auto;
-	margin-top: 40px;
-}
 	</style>
 </body>
 </html>

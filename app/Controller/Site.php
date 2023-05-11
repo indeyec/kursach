@@ -15,7 +15,7 @@ class Site
         return new View('site.hello', []);
     }
 
-    public function signup(Request $request): string
+    public function signUp(Request $request): string
     {
         if ($request->method === 'POST') {
 
@@ -31,7 +31,7 @@ class Site
             ]);
 
             if($validator->fails()){
-                return new View('site.signup',
+                return new View('site.signUp',
                     ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
             }
 
@@ -40,7 +40,7 @@ class Site
                 return false;
             }
         }
-        return new View('site.signup');
+        return new View('site.signUp');
     }
 
     public function login(Request $request): string
