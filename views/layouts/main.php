@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="tape">
-			<a href="#">новости</a>
+            <a href="<?= app()->route->getUrl('/news')?>">новости</a>
 			<a href="#">сообщения</a>
 			<a href="#">друзья</a>
 			<a href="#">заметки</a>

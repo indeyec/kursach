@@ -42,10 +42,41 @@ class User extends Model implements IdentityInterface
        return $this->id;
    }
 
+   public function getNameOrUsername()
+   {
+       return $this->FirstName() ?: $this->login;
+   }
+
    //Возврат аутентифицированного пользователя
    public function attemptIdentity(array $credentials)
    {
        return self::where(['login' => $credentials['login'],
            'password' => md5($credentials['password'])])->first();
+   }
+
+   public function friendsOfMine()
+   {
+       return $this->belongsToMany('App\Model\User','friends', 'user_id', 'friend_id');
+   }
+
+   public function friendOf()
+   {
+       return $this->belongsToMany('App\Model\User','friends', 'friend_id', 'user_id');
+   }
+
+   public function friends()
+   {
+       return $this->friendsOfMine()->wherePivot('accepted',true)->get()
+            ->merge($this->friendOf()->wherePivot('accepted',true)->get());
+   }
+
+    public function getFriendsCount()
+    {
+        return $this->friends()->count();
+    }
+
+   public function getAvatarUrl()
+   {
+       return "https://www.gravatar.com/avatar/{{ md5($this->email)?d=mm&s=40 }}";
    }
 }

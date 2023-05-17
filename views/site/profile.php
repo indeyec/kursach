@@ -7,11 +7,11 @@ if (app()->auth::User()->id):
         <input type="file" name="avatar" id="avatar">
         <input type="submit" class="btn" value="Загрузить">
     </form>
+    <img src="{{ $user->getAvatarUrl }}" class="mr-3" alt="Your Avatar">
 <?php
 endif;
 ?>
 <div class="main_block">
-
         <div class="bloc">
         <h5>Фамилия</h5>
         <b><?= app()->auth->user()->LastName ?? ''; ?>
@@ -31,6 +31,26 @@ endif;
         </div>
 
 </div>
+<!--<div class="side_block">-->
+<!--    <h6>Друзья --><?//= app()->auth->user()->FirstName ?? ''; ?><!--</h6>-->
+<!--    --><?php
+//    if (!$users->getFriendsCount()):
+//    ?>
+<!--        <p>--><?//= app()->auth->user()->FirstName ?? ''; ?><!-- Нет друзей. </p>-->
+<!---->
+<!--    --><?php
+//    else :
+//    ?>
+<!--        --><?php
+//        foreach ($users->friends() as $friend) {
+// //         include('user.partials.userblock')
+//            echo '<p>' . $friend->FirstName . '</p>';
+//        }
+//        ?>
+<!--    --><?php
+//    endif;
+//    ?>
+<!--</div>-->
 <style>
 
     .main_block{

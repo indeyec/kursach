@@ -71,6 +71,11 @@ class Site
         return new View('site.profile', ['users' => $users]);
     }
 
+    public function news(): string
+    {
+        return new View('site.news');
+    }
+
 }
 
 
